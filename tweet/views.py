@@ -32,7 +32,7 @@ def tweet_edit(request, tweet_id):
             tweet = form.save(commit=False)
             tweet.user = request.user
             tweet.save()
-            return redirect('tweeet_list')
+            return redirect('tweet_list')
     else:
         form = TweetForm(instance=tweet)
     return render(request, 'tweet_form.html', {'form': form})
